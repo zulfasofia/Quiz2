@@ -1,0 +1,76 @@
+﻿@model MvAjaxSubmitFormJquery.Models.StudentsModel
+
+@{
+    ViewBag.Title = "LoginPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Index","Home",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <section>
+        <h1>Welcome!</h1>
+        <p>
+            <fieldset>
+                <legend>Students Login Form</legend>
+                <table>
+                    <tr><td></td><td style="color:red;">@TempData["ErrorLogin"]</td></tr>
+                    <tr>
+                        <td>
+                            <div class="editor-label">
+                                <label>Email :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.Email_id)
+                                @Html.ValidationMessageFor(model => model.Email_id)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="editor-label">
+                                <label>Password :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.PasswordFor(model => model.Password)
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Login" /></td>
+                        <td>
+                            <a href="~/Home/CreatStudentRegistartion">Registration</a>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <br />
+            </fieldset>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+              <br />
+            <br />
+            <br />
+        </p>
+    </section>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

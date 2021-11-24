@@ -1,0 +1,233 @@
+﻿@model MvAjaxSubmitFormJquery.Models.StudentsModel
+
+@{
+    ViewBag.Title = "CreatStudentRegistartion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#Date").datepicker();
+    });
+</script>
+
+
+@using (Html.BeginForm("CreatStudentRegistartion", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true) 
+    
+    <section>
+        <h1>Welcome Student Registration form in MVC4</h1>
+        <p>
+            <fieldset>
+                <legend>Fill Students Details </legend>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="editor-label">
+                                <label>First Name :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.First_Name)
+                                @Html.ValidationMessageFor(model => model.First_Name)
+                            </div>
+                        </td>
+                        &nbsp&nbsp&nbsp&nbsp
+
+                        <td>
+                            <div class="editor-label">
+                                <label>Last Name :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.Last_Name)
+                                @Html.ValidationMessageFor(model => model.Last_Name)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="editor-label">
+                                <label>Upload image</label>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                <input type="file" name="file" />
+                                @Html.HiddenFor(model => model.Upload_img)
+                                @Html.ValidationMessageFor(model => model.Upload_img)
+                            </div>
+                        </td>
+                         <td>
+                            <div class="editor-label">
+                                <label>Dateofbirth</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.Dob, new {id="Date" })
+                                @Html.ValidationMessageFor(model => model.Dob)
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="editor-label">
+                                <label>Email :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.Email_id)
+                                @Html.ValidationMessageFor(model => model.Email_id)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-label">
+                                <label>Password</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.PasswordFor(model => model.Password)
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="editor-label">
+                                <label>Gender :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                  @Html.DropDownList("Gender", new List<SelectListItem>
+                                        {
+                                            new SelectListItem{ Text = "Male",  Value = "Male"},
+                                            new SelectListItem{ Text = "Female", Value = "Female"},
+                                      }, "Please select gender")                               
+                                @Html.ValidationMessageFor(model => model.Gender)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-label">
+                                <label>Cell No :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.Cell_number)
+                                @Html.ValidationMessageFor(model => model.Cell_number)
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <div class="editor-label">
+                                <label>College :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.College)
+                                @Html.ValidationMessageFor(model => model.College)
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="editor-label">
+                                <label>Address</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.TextAreaFor(model => model.Adress, new { cols = 15, @rows = 1 })
+                                @Html.ValidationMessageFor(model => model.Adress)
+                            </div>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <div class="editor-label">
+                                <label>City :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                 @Html.DropDownList("City", new List<SelectListItem>
+                                        {
+                                            new SelectListItem{ Text = "Hyderabad",  Value = "Hyderabad"},
+                                            new SelectListItem{ Text = "Adilabad", Value = "Adilabad"},
+                                            new SelectListItem{ Text = "Khammam", Value = "Khammam"},
+                                            new SelectListItem{ Text = "Kadapa", Value = "Kadapa"},
+                                            new SelectListItem{ Text = "Thirupathi", Value = "Thirupathi"},
+                                      }, "Please select city")  
+
+                                @*@Html.EditorFor(model => model.City)*@
+                                @Html.ValidationMessageFor(model => model.City)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-label">
+                                <label>State :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.DropDownList("State", new List<SelectListItem>
+                                        {
+                                            new SelectListItem{ Text = "Telangana",  Value = "Telangana"},
+                                            new SelectListItem{ Text = "Andhra pradesh", Value = "Andhra pradesh"},
+                                      }, "Please select state")  
+                                @*@Html.EditorFor(model => model.State)*@
+                                @Html.ValidationMessageFor(model => model.State)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="editor-label">
+                                <label>Pin No :</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.Pin)
+                                @Html.ValidationMessageFor(model => model.Pin)
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="Create Registration" />
+                </p>
+            </fieldset>
+        </p>
+    </section>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Student>
+  <item>
+    <id>1</id>
+    <first_name>Syed</first_name>
+    <last_name>Rehan Ali</last_name>
+    <email_id>laxmanlucky@gmail.com</email_id>
+    <password>laxman</password>
+    <upload_img>laxmanlucky@gmail.com69cc4576f0fd7b1d8e1096a71c7df677.jpg</upload_img>
+    <dob>1/5/1990</dob>
+    <gender>Male</gender>
+    <cell_number>9854785698</cell_number>
+    <college>MJ</college>
+    <adress>Charminar</adress>
+    <city>Hyderabad</city>
+    <state>Telangana</state>
+    <pin>500053</pin>
+  </item>
+  <item>
+    <id>2</id>
+    <first_name>naveed</first_name>
+    <last_name>shaik</last_name>
+    <email_id>smd.naveed121@gmail.com</email_id>
+    <password>swift</password>
+    <upload_img>smd.naveed121@gmail.com10514672_660786457332625_2814760289958086281_n.jpg</upload_img>
+    <dob>1/24/2015</dob>
+    <gender>Male</gender>
+    <cell_number>9059458123</cell_number>
+    <college>narayana</college>
+    <adress>hysd</adress>
+    <city>Hyderabad</city>
+    <state>Telangana</state>
+    <pin>5000028</pin>
+  </item>
+  <item>
+    <id>3</id>
+    <first_name>laxman</first_name>
+    <last_name>lucky</last_name>
+    <email_id>laxman.cse2008@gmail.com</email_id>
+    <password>laxman</password>
+    <upload_img>laxman.cse2008@gmail.comlucky.jpg</upload_img>
+    <dob>1/24/2015</dob>
+    <gender>Male</gender>
+    <cell_number>0123456789</cell_number>
+    <college>Klr Engg college of technologies</college>
+    <adress>Tolli chowiki,
+Mehadhipatnam,
+Hyderabad.</adress>
+    <city>Hyderabad</city>
+    <state>Telangana</state>
+    <pin>501234</pin>
+  </item>
+  <item>
+    <id>4</id>
+    <first_name>lucky</first_name>
+    <last_name>Laxman</last_name>
+    <email_id>laxman.cse2008@gmail.com</email_id>
+    <password>laxman557</password>
+    <upload_img>laxman.cse2008@gmail.comlaxman1.png</upload_img>
+    <dob>1/20/1989</dob>
+    <gender>Male</gender>
+    <cell_number>8977545633</cell_number>
+    <college>Klr Engg college of technologies</college>
+    <adress>Tolli chowki ,near Mehadhipatnam,
+Hyderabad.</adress>
+    <city>Hyderabad</city>
+    <state>Telangana</state>
+    <pin>501234</pin>
+  </item>
+</Student>
